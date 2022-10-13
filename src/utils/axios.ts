@@ -4,22 +4,23 @@ const Axios = axios.create({
   baseURL: '/api',
   timeout: 5000,
   headers: {
-    'X-Requested-With': 'XMLHttpRequest',
-  },
-})
+    'X-Requested-With': 'XMLHttpRequest'
+  }
+});
 
 Axios.interceptors.request.use((config: AxiosRequestConfig) => {
-
   return config;
-})
+});
 
-Axios.interceptors.response.use((response) => {
+Axios.interceptors.response.use(
+  (response) => {
+    const result = response.data;
 
-  const result = response.data;
-
-  return Promise.resolve(result);
-}, (error: AxiosError) => {
-  return Promise.reject(error);
-})
+    return Promise.resolve(result);
+  },
+  (error: AxiosError) => {
+    return Promise.reject(error);
+  }
+);
 
 export default Axios;
