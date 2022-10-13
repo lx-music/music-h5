@@ -1,0 +1,9 @@
+{
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "Vue.volar",
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": true
+}
