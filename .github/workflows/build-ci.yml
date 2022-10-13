@@ -47,7 +47,7 @@ jobs:
       # 打包镜像推送到阿里云容器镜像服务
       - name: 构建容器镜像
         run: |
-          docker login --username=${{ secrets.DOCKER_USERNAME }}  registry.cn-hangzhou.aliyuncs.com --password-stdin=${{ secrets.DOCKER_PASSWORD }}
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login --username=${{ secrets.DOCKER_USERNAME }}  registry.cn-hangzhou.aliyuncs.com --password-stdin
           docker build -t lx-music:latest .
           docker tag lx-music registry.cn-hangzhou.aliyuncs.com/lixin94/lx-music:latest
           docker push registry.cn-hangzhou.aliyuncs.com/lixin94/lx-music:latest
