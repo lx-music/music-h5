@@ -7,8 +7,15 @@ on:
     types:
     - published
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: 检查分支
@@ -29,3 +36,7 @@ jobs:
       - name: 构建
         run: |
           npm run build
+
+      - name: 发布到GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
