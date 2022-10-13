@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -43,6 +43,16 @@ jobs:
       - name: 构建
         run: |
           npm run build
+
+  - depoly: 
+    - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: './docs'
 
       - name: 发布到GitHub Pages
         id: deployment
