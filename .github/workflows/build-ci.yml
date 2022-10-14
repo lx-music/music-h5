@@ -54,4 +54,4 @@ jobs:
           host: ${{ secrets.HOST }}
           password: ${{ secrets.PASSWORD }}
           username: ${{ secrets.USERNAME }}
-          script: cd ~ && sh lx-music-deploy.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PASSWORD }}
+          script: cd ~ && sh music-h5-deploy.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PASSWORD }}
