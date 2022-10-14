@@ -9,7 +9,7 @@ const API_DOMAIN = '';
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: './docs'
+    // outDir: './docs'
   },
   resolve: {
     alias: {
