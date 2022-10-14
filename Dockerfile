@@ -1,5 +1,5 @@
 FROM nginx
-COPY ./dist/ /home/my-music/h5
+COPY ./dist/ /usr/share/nginx/html/
 # 第一步nginx配置文件名称
-COPY ./default.conf /usr/local/nginx/conf.d/my-music.conf
+COPY ./default.conf /etc/nginx/conf.d/my-music.conf
 EXPOSE 80
