@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  depoly:
     runs-on: ubuntu-latest
     steps:
       - name: 检查分支
@@ -40,10 +40,7 @@ jobs:
       - name: 构建
         run: |
           npm run build
-
-  depoly: 
-    runs-on: ubuntu-latest
-    steps:
+          
       # 打包镜像推送到阿里云容器镜像服务
       - name: 构建容器镜像
         run: |
